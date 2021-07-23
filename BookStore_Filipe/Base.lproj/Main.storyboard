@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eXh-VX-bFe">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Tsl-mg-RX2">
+            <objects>
+                <navigationController id="eXh-VX-bFe" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AxW-SX-5Hy">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="li9-0u-BoQ" kind="relationship" relationship="rootViewController" id="YOE-Pt-mB1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0t7-wI-qiP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1781" y="41"/>
+        </scene>
+        <!--BookList-->
+        <scene sceneID="fN1-Hf-sA7">
+            <objects>
+                <viewController storyboardIdentifier="BookListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="li9-0u-BoQ" customClass="BookListViewController" customModule="BookStore_Filipe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZRV-pO-4U4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Xbv-K5-bYB">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1Q7-HU-CUB">
+                                    <size key="itemSize" width="200" height="200"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BookCell" id="8oe-3x-MLg" customClass="BookListCell" customModule="BookStore_Filipe" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="dJe-l1-nfS">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rni-30-U9e">
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="rni-30-U9e" firstAttribute="top" secondItem="dJe-l1-nfS" secondAttribute="top" id="BaG-du-ID2"/>
+                                                <constraint firstItem="rni-30-U9e" firstAttribute="leading" secondItem="dJe-l1-nfS" secondAttribute="leading" id="K6J-fm-iwe"/>
+                                                <constraint firstAttribute="trailing" secondItem="rni-30-U9e" secondAttribute="trailing" id="aA2-4m-zxI"/>
+                                                <constraint firstAttribute="bottom" secondItem="rni-30-U9e" secondAttribute="bottom" id="aJW-LU-hmK"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageView" destination="rni-30-U9e" id="4GZ-mX-GiI"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="li9-0u-BoQ" id="aGi-Xz-2oX"/>
+                                    <outlet property="delegate" destination="li9-0u-BoQ" id="mN6-Uq-i8J"/>
+                                    <outlet property="prefetchDataSource" destination="li9-0u-BoQ" id="PGW-4l-71g"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Xbv-K5-bYB" firstAttribute="leading" secondItem="uyb-8M-YOg" secondAttribute="leading" id="5ub-lu-99u"/>
+                            <constraint firstItem="uyb-8M-YOg" firstAttribute="trailing" secondItem="Xbv-K5-bYB" secondAttribute="trailing" id="SYD-Ky-fgo"/>
+                            <constraint firstItem="Xbv-K5-bYB" firstAttribute="bottom" secondItem="uyb-8M-YOg" secondAttribute="bottom" id="amD-JG-78b"/>
+                            <constraint firstItem="Xbv-K5-bYB" firstAttribute="top" secondItem="uyb-8M-YOg" secondAttribute="top" id="czC-w6-cjl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uyb-8M-YOg"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="BookList" id="Oph-eJ-AgD">
+                        <barButtonItem key="rightBarButtonItem" title="Favorites" id="0yQ-5Z-4E2">
+                            <connections>
+                                <action selector="filterFavoriteList" destination="li9-0u-BoQ" id="C3w-0V-ZfS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="Xbv-K5-bYB" id="D0q-wk-Lmj"/>
+                        <outlet property="favoriteListButton" destination="0yQ-5Z-4E2" id="o3n-ag-e2L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bJk-8g-kai" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-728.98550724637687" y="40.848214285714285"/>
+        </scene>
+        <!--Book Detail View Controller-->
+        <scene sceneID="PRq-jr-wFz">
+            <objects>
+                <viewController storyboardIdentifier="BookDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mEm-XF-6gB" customClass="BookDetailViewController" customModule="BookStore_Filipe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dG5-Is-Toy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="yS1-bm-XMk">
+                                <rect key="frame" x="20" y="44" width="374" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="Ggc-Hz-UGB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="aQr-EK-YtP">
+                                <rect key="frame" x="20" y="99" width="374" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="HRu-R9-G14"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="g39-jQ-NR4">
+                                <rect key="frame" x="20" y="145" width="374" height="661"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5U-ik-iLS">
+                                <rect key="frame" x="20" y="814" width="374" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="aHZ-Gu-r66"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Buy"/>
+                                <connections>
+                                    <action selector="openLink" destination="mEm-XF-6gB" eventType="touchUpInside" id="sZE-Xs-bzk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="aQr-EK-YtP" firstAttribute="leading" secondItem="hbo-WM-TZ4" secondAttribute="leading" constant="20" id="0UH-HJ-Ws2"/>
+                            <constraint firstItem="aQr-EK-YtP" firstAttribute="top" secondItem="yS1-bm-XMk" secondAttribute="bottom" constant="8" id="18u-m0-qmD"/>
+                            <constraint firstItem="yS1-bm-XMk" firstAttribute="leading" secondItem="hbo-WM-TZ4" secondAttribute="leading" constant="20" id="36X-Og-01k"/>
+                            <constraint firstItem="g39-jQ-NR4" firstAttribute="top" secondItem="aQr-EK-YtP" secondAttribute="bottom" constant="8" id="BkY-F6-gwO"/>
+                            <constraint firstItem="g39-jQ-NR4" firstAttribute="top" secondItem="aQr-EK-YtP" secondAttribute="bottom" constant="8" id="Epw-pC-Uia"/>
+                            <constraint firstItem="hbo-WM-TZ4" firstAttribute="trailing" secondItem="g39-jQ-NR4" secondAttribute="trailing" constant="20" id="MYB-hZ-9bq"/>
+                            <constraint firstItem="aQr-EK-YtP" firstAttribute="top" secondItem="yS1-bm-XMk" secondAttribute="bottom" constant="8" id="Otk-hk-xTw"/>
+                            <constraint firstItem="hbo-WM-TZ4" firstAttribute="trailing" secondItem="yS1-bm-XMk" secondAttribute="trailing" constant="20" id="UB4-Zq-umZ"/>
+                            <constraint firstItem="R5U-ik-iLS" firstAttribute="top" secondItem="g39-jQ-NR4" secondAttribute="bottom" constant="8" id="W8u-nv-tlU"/>
+                            <constraint firstItem="R5U-ik-iLS" firstAttribute="leading" secondItem="hbo-WM-TZ4" secondAttribute="leading" constant="20" id="YC7-Wb-jcf"/>
+                            <constraint firstItem="hbo-WM-TZ4" firstAttribute="trailing" secondItem="aQr-EK-YtP" secondAttribute="trailing" constant="20" id="bBr-TA-RO0"/>
+                            <constraint firstItem="yS1-bm-XMk" firstAttribute="top" secondItem="hbo-WM-TZ4" secondAttribute="top" id="dLo-Cd-JnD"/>
+                            <constraint firstItem="R5U-ik-iLS" firstAttribute="top" secondItem="g39-jQ-NR4" secondAttribute="bottom" constant="8" id="iJX-3v-X1d"/>
+                            <constraint firstItem="hbo-WM-TZ4" firstAttribute="trailing" secondItem="R5U-ik-iLS" secondAttribute="trailing" constant="20" id="ifz-Cv-o0k"/>
+                            <constraint firstItem="R5U-ik-iLS" firstAttribute="bottom" secondItem="hbo-WM-TZ4" secondAttribute="bottom" id="rQJ-qk-TjF"/>
+                            <constraint firstItem="g39-jQ-NR4" firstAttribute="leading" secondItem="hbo-WM-TZ4" secondAttribute="leading" constant="20" id="xOg-k4-ito"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hbo-WM-TZ4"/>
+                    </view>
+                    <connections>
+                        <outlet property="bookAuthor" destination="aQr-EK-YtP" id="se8-Mp-gOL"/>
+                        <outlet property="bookBuyButton" destination="R5U-ik-iLS" id="3zv-i1-l5D"/>
+                        <outlet property="bookDescription" destination="g39-jQ-NR4" id="Pqf-CM-R3E"/>
+                        <outlet property="bookTitle" destination="yS1-bm-XMk" id="Bgq-qC-ePW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="adj-aX-kGD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="404.34782608695656" y="40.848214285714285"/>
+        </scene>
+    </scenes>
+</document>
