@@ -3,24 +3,44 @@ PODS:
   - Kingfisher (5.15.8):
     - Kingfisher/Core (= 5.15.8)
   - Kingfisher/Core (5.15.8)
+  - Nimble (9.2.0)
+  - OHHTTPStubs/Core (9.1.0)
+  - OHHTTPStubs/Default (9.1.0):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (9.1.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (9.1.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (9.1.0)
+  - OHHTTPStubs/Swift (9.1.0):
+    - OHHTTPStubs/Default
   - ProgressHUD (2.70)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0)
   - Kingfisher (~> 5.0)
+  - Nimble
+  - OHHTTPStubs/Swift
   - ProgressHUD (~> 2.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Kingfisher
+    - Nimble
+    - OHHTTPStubs
     - ProgressHUD
 
 SPEC CHECKSUMS:
   Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
   Kingfisher: a3c03d702433fa6cfedabb2bddbe076fb8f2e902
+  Nimble: 4f4a345c80b503b3ea13606a4f98405974ee4d0b
+  OHHTTPStubs: 90eac6d8f2c18317baeca36698523dc67c513831
   ProgressHUD: e603e8b8622c47d8818b9fb38b3cfe9d3e7ca421
 
-PODFILE CHECKSUM: 3810d293e2dcbd085f581bdc97a1b4dc8127a479
+PODFILE CHECKSUM: 9d2508893c209ff5580522c8d81e19c78c269aa4
 
 COCOAPODS: 1.10.1

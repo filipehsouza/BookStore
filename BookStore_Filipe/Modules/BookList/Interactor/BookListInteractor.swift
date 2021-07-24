@@ -49,9 +49,8 @@ class BookListInteractor: BookListInteractorProtocol {
     func getBookList(filtered:Bool) -> [Book]? {
         if filtered {
             return getFilteredBookList()
-        } else {
-            return getAllBooksList()
         }
+        return getAllBooksList()
     }
     
     private func getAllBooksList() -> [Book]? {

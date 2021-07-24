@@ -8,7 +8,13 @@
 
 import Foundation
 
-class LocalStorage {
+protocol LocalStorageProtocol {
+    func save(string: String)
+    func get() -> [String]
+    func delete(string: String)
+}
+
+class LocalStorage: LocalStorageProtocol {
     
     static var shared:LocalStorage = {
         let instance = LocalStorage()

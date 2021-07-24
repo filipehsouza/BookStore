@@ -41,11 +41,10 @@ class BookDetailPresenter: BookDetailPresenterProtocol {
 extension BookDetailPresenter: BookDetailInteractorDelegate {
     
     func bookSaved() {
-        guard let book = interactor?.getBook() else {
-            fatalError("No Book provided")
+        if let book = interactor?.getBook(),
+            let favorite = interactor?.isFavorite() {
+            view?.showDetail(for: book, isFavorite: favorite)
         }
-        let favorite = interactor?.isFavorite()
-        view?.showDetail(for: book, isFavorite: favorite ?? false)
     }
     
 }

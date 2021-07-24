@@ -102,20 +102,16 @@ extension BookListViewController: BookListPresenterDelegate {
     }
     
     func showBooks(filtered: Bool) {
-        DispatchQueue.main.async {
-            if filtered {
-                self.favoriteListButton?.title = "All"
-            } else {
-                self.favoriteListButton?.title = "Favorites"
-            }
+        if filtered {
+            self.favoriteListButton?.title = "All"
+        } else {
+            self.favoriteListButton?.title = "Favorites"
         }
         collectionView?.reloadData()
     }
     
     func showError() {
-        let alert = UIAlertController(title: "Alert", message: "Problem Fetching Books", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        ProgressHUD.showError("Problem Fetching Books", interaction: true)
     }
     
 }

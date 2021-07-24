@@ -19,7 +19,6 @@ class BookDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         presenter?.getBookDetail()
     }
     
@@ -50,15 +49,13 @@ extension BookDetailViewController: BookDetailPresenterDelegate {
             bookBuyButton?.isHidden = true
         }
         
-        DispatchQueue.main.async {
-            self.navigationItem.rightBarButtonItems = []
-            if isFavorite {
-                let unfavoriteButton = UIBarButtonItem(title: "Unfavorite", style: .plain, target: self, action: #selector(self.unfavoriteBook))
-                self.navigationItem.setRightBarButton(unfavoriteButton, animated: true)
-            } else {
-                let favoriteButton = UIBarButtonItem(title: "Favorite", style: .plain, target: self, action: #selector(self.favoriteBook))
-                self.navigationItem.setRightBarButton(favoriteButton, animated: true)
-            }
+        self.navigationItem.rightBarButtonItems = []
+        if isFavorite {
+            let unfavoriteButton = UIBarButtonItem(title: "Unfavorite", style: .plain, target: self, action: #selector(self.unfavoriteBook))
+            self.navigationItem.setRightBarButton(unfavoriteButton, animated: true)
+        } else {
+            let favoriteButton = UIBarButtonItem(title: "Favorite", style: .plain, target: self, action: #selector(self.favoriteBook))
+            self.navigationItem.setRightBarButton(favoriteButton, animated: true)
         }
     }
     

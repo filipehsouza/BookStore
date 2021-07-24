@@ -7,11 +7,21 @@
 		<key>BookStore_Filipe.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>0</integer>
+		</dict>
+		<key>BookStore_FilipeTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>3948E11F26AAEDE600D61143</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>39C9DAFC26A76341002DC93A</key>
 		<dict>
 			<key>primary</key>

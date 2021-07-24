@@ -1,0 +1,107 @@
+{
+  "kind": "books#volumes",
+  "totalItems": 442,
+  "items": [
+    {
+      "kind": "books#volume",
+      "id": "mmx3CgAAQBAJ",
+      "etag": "Mmjg3rAKaEs",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/mmx3CgAAQBAJ",
+      "volumeInfo": {
+        "title": "Delphi para Android e iOS",
+        "subtitle": "Desenvolvendo aplicativos móveis",
+        "authors": [
+          "William Duarte"
+        ],
+        "publisher": "Brasport",
+        "publishedDate": "2015-09-01",
+        "description": "Inovar, empreender, criar e sonhar! Em um mundo cada vez mais conectado, inovar é sinônimo de criatividade e inteligência. Eletrônicos como celulares e dispositivos “vestíveis” já fazem parte do nosso dia a dia. Pensando nisso, nada melhor que colocar aquela sua ideia em prática: empreender criando aplicativos de sucesso. Com este livro será possível aprender como desenvolver aplicativos para dispositivos móveis, sejam celulares, tablets, relógios, óculos, etc. Inclui tópicos sobre Firemonkey, layouts responsivos, sensores, bancos de dados embarcado SQLite, câmera fotográfica, geolocalização (GPS), monetização, notificações e muito mais. Utilizando o Delphi, seus aplicativos serão desenvolvidos de forma amigável, simples e rápida. Ganhe dinheiro juntando criatividade, inovação e DELPHI! Prefácios de Marco Cantù e Claudio Nasajon",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9788574527482"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "8574527483"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 216,
+        "printType": "BOOK",
+        "categories": [
+          "Computers"
+        ],
+        "averageRating": 5,
+        "ratingsCount": 1,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "0.1.2.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=mmx3CgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=mmx3CgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "pt-BR",
+        "previewLink": "http://books.google.com.br/books?id=mmx3CgAAQBAJ&printsec=frontcover&dq=ios&hl=&cd=1&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=mmx3CgAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=mmx3CgAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 29,
+          "currencyCode": "BRL"
+        },
+        "retailPrice": {
+          "amount": 29,
+          "currencyCode": "BRL"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=mmx3CgAAQBAJ&rdid=book-mmx3CgAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 29000000,
+              "currencyCode": "BRL"
+            },
+            "retailPrice": {
+              "amountInMicros": 29000000,
+              "currencyCode": "BRL"
+            },
+            "giftable": true
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com.br/books/download/Delphi_para_Android_e_iOS-sample-epub.acsm?id=mmx3CgAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com.br/books/download/Delphi_para_Android_e_iOS-sample-pdf.acsm?id=mmx3CgAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=mmx3CgAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Inovar, empreender, criar e sonhar!"
+      }
+    }
+  ]
+}

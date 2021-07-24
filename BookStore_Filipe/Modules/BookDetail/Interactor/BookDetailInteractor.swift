@@ -12,6 +12,7 @@ class BookDetailInteractor: BookDetailInteractorProtocol {
     
     weak var presenter: BookDetailInteractorDelegate?
     var book: Book?
+    var storage:LocalStorageProtocol = LocalStorage.shared
     
     func getBook() -> Book {
         guard let book = book else {
@@ -21,7 +22,7 @@ class BookDetailInteractor: BookDetailInteractorProtocol {
     }
     
     func isFavorite() -> Bool {
-        let favoriteList = LocalStorage.shared.get()
+        let favoriteList = storage.get()
         let bookDetail = getBook()
         let isFavorite = favoriteList.contains(bookDetail.id)
         return isFavorite
@@ -31,7 +32,7 @@ class BookDetailInteractor: BookDetailInteractorProtocol {
         guard let id = book?.id else {
             return
         }
-        LocalStorage.shared.save(string: id)
+        storage.save(string: id)
         presenter?.bookSaved()
     }
     
@@ -40,7 +41,7 @@ class BookDetailInteractor: BookDetailInteractorProtocol {
             return
         }
         
-        LocalStorage.shared.delete(string: id)
+        storage.delete(string: id)
         presenter?.bookSaved()
     }
 }

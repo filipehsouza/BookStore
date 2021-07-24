@@ -48,7 +48,7 @@ class BookListPresenter: BookListPresenterProtocol {
     
     func showBookDetail(for index: Int) {
         guard let book = interactor?.getBookList(filtered: isFiltered)?[index] else {
-            return
+            fatalError("Array out of bounds or Interactor nil")
         }
         router?.pushToBookDetail(on: view!, for: book)
     }
@@ -65,15 +65,6 @@ extension BookListPresenter: BookListInteractorDelegate {
     func bookListFetchedFailed() {
         view?.hideLoading()
         view?.showError()
-    }
-    
-    private func calculateIndexPathsToReload(from newBooks: [Book]) -> [IndexPath] {
-        guard let books = interactor?.getBookList(filtered: isFiltered) else {
-            fatalError()
-        }
-        let startIndex = books.count - newBooks.count
-        let endIndex = startIndex + newBooks.count
-        return (startIndex..<endIndex).map { IndexPath(row: $0, section: 0) }
     }
     
 }

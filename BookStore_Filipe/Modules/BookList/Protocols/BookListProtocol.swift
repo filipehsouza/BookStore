@@ -31,7 +31,7 @@ protocol BookListPresenterProtocol: class {
 
 protocol BookListInteractorProtocol: class {
     var presenter: BookListInteractorDelegate? { get set }
-    var books: [Book]? { get }
+    var books: [Book]? { get set }
     
     func fetchBookList()
     func getBookList(filtered:Bool) -> [Book]?
