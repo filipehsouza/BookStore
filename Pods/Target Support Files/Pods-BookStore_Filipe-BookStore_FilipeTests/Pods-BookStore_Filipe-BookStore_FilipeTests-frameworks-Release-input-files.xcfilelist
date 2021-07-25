@@ -1,6 +1,0 @@
-${PODS_ROOT}/Target Support Files/Pods-BookStore_Filipe-BookStore_FilipeTests/Pods-BookStore_Filipe-BookStore_FilipeTests-frameworks.sh
-${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
-${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework
-${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework
-${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework
-${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework
