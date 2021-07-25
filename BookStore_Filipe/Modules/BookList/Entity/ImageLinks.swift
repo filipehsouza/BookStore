@@ -7,7 +7,9 @@
 //
 
 import Foundation
+import Unrealm
 
-struct ImageLinks: Codable {
-    let smallThumbnail, thumbnail: String
+struct ImageLinks: Codable, Realmable {
+    var smallThumbnail: String = ""
+    var thumbnail: String = ""
 }

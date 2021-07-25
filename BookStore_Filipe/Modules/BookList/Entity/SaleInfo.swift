@@ -7,7 +7,8 @@
 //
 
 import Foundation
+import Unrealm
 
-struct SaleInfo: Codable {
-    let buyLink: String?
+struct SaleInfo: Codable, Realmable {
+    var buyLink: String?
 }

@@ -16,6 +16,8 @@ class BookListInteractor: BookListInteractorProtocol {
     var index:Int = 0
     var isFetchInProgress:Bool = false
     
+    var storage:LocalStorageProtocol = RealmStorage.shared
+    
     func fetchBookList() {
         
         guard !isFetchInProgress else {
@@ -65,7 +67,7 @@ class BookListInteractor: BookListInteractorProtocol {
             return nil
         }
         
-        let favoriteBooks = LocalStorage.shared.get()
+        let favoriteBooks = storage.all()
         let filteredList = bookList.filter({ favoriteBooks.contains($0.id) })
         
         return filteredList

@@ -18,6 +18,16 @@ PODS:
   - OHHTTPStubs/Swift (9.1.0):
     - OHHTTPStubs/Default
   - ProgressHUD (2.70)
+  - Realm (10.5.0):
+    - Realm/Headers (= 10.5.0)
+  - Realm/Headers (10.5.0)
+  - RealmSwift (10.5.0):
+    - Realm (= 10.5.0)
+  - RuntimeNew (2.1.5)
+  - Unrealm (1.9.0):
+    - Realm (= 10.5.0)
+    - RealmSwift (= 10.5.0)
+    - RuntimeNew (= 2.1.5)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0)
@@ -25,6 +35,8 @@ DEPENDENCIES:
   - Nimble
   - OHHTTPStubs/Swift
   - ProgressHUD (~> 2.0)
+  - RealmSwift (~> 10.5.0)
+  - Unrealm
 
 SPEC REPOS:
   trunk:
@@ -33,6 +45,10 @@ SPEC REPOS:
     - Nimble
     - OHHTTPStubs
     - ProgressHUD
+    - Realm
+    - RealmSwift
+    - RuntimeNew
+    - Unrealm
 
 SPEC CHECKSUMS:
   Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
@@ -40,7 +56,11 @@ SPEC CHECKSUMS:
   Nimble: 4f4a345c80b503b3ea13606a4f98405974ee4d0b
   OHHTTPStubs: 90eac6d8f2c18317baeca36698523dc67c513831
   ProgressHUD: e603e8b8622c47d8818b9fb38b3cfe9d3e7ca421
+  Realm: e1c22c3d83b229afb70ebc10e1771c91e9542d12
+  RealmSwift: 6fc078d9d3fd7e58c71bfdbb694e252462f112a5
+  RuntimeNew: ef34cf1783be4c1cbe798970bc590924dab5df87
+  Unrealm: 4992f5170f330be3e7b82b184b07dc8eb24257cc
 
-PODFILE CHECKSUM: 9d2508893c209ff5580522c8d81e19c78c269aa4
+PODFILE CHECKSUM: 409e26dff0c481de832e80332696388a1dcd4ab5
 
 COCOAPODS: 1.10.1

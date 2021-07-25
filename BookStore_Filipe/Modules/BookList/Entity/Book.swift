@@ -7,10 +7,16 @@
 //
 
 import Foundation
+import Unrealm
 
-struct Book: Codable {
-    let kind, id: String
-    let selfLink: String
-    let volumeInfo: VolumeInfo
-    let saleInfo: SaleInfo
+struct Book: Codable, Realmable {
+    var kind: String = ""
+    var id: String = ""
+    var selfLink: String = ""
+    var volumeInfo: VolumeInfo = VolumeInfo()
+    var saleInfo: SaleInfo = SaleInfo()
+    
+    static func primaryKey() -> String? {
+        return "id"
+    }
 }

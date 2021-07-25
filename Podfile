@@ -9,6 +9,8 @@ target 'BookStore_Filipe' do
   pod 'Alamofire', '~> 5.0.0'
   pod 'Kingfisher', '~> 5.0'
   pod 'ProgressHUD', '~> 2.0'
+  pod 'RealmSwift', '~> 10.5.0'
+  pod 'Unrealm'
 
   target 'BookStore_FilipeTests' do
     pod 'OHHTTPStubs/Swift'

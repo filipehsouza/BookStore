@@ -7,43 +7,43 @@
 //
 
 import Foundation
+import Unrealm
 
 protocol LocalStorageProtocol {
-    func save(string: String)
-    func get() -> [String]
-    func delete(string: String)
+    func all() -> [String]
+    func add(_ book: Book)
+    func delete(_ book: Book)
 }
 
-class LocalStorage: LocalStorageProtocol {
+class RealmStorage: LocalStorageProtocol {
     
-    static var shared:LocalStorage = {
-        let instance = LocalStorage()
+    static var shared:RealmStorage = {
+        let instance = RealmStorage()
         return instance
     }()
     
-    private init() {}
-    
-    func save(string: String) {
-        var array = get()
-        array.append(string)
-        
-        UserDefaults.standard.set(array, forKey: Constants.defaultsKey)
+    func all() -> [String] {
+        guard let realm = try? Realm() else { return [String]() }
+        let items = realm.objects(Book.self)
+        var array:[String] = [String]()
+        for item in items {
+            array.append(item.id)
+        }
+        return array
     }
     
-    func get() -> [String] {
-        if let array = UserDefaults.standard.stringArray(forKey: Constants.defaultsKey) {
-            return array
+    func add(_ book: Book) {
+        guard let realm = try? Realm() else { return }
+        try! realm.write {
+            realm.add(book, update: .all)
         }
-        return [String]()
     }
     
-    func delete(string: String) {
-        var array = get()
-        if let index = array.firstIndex(of: string) {
-            array.remove(at: index)
+    func delete(_ book: Book) {
+        guard let realm = try? Realm() else { return }
+        try! realm.write {
+            realm.delete(book)
         }
-        
-        UserDefaults.standard.set(array, forKey: Constants.defaultsKey)
     }
     
 }

@@ -12,7 +12,7 @@ class BookDetailInteractor: BookDetailInteractorProtocol {
     
     weak var presenter: BookDetailInteractorDelegate?
     var book: Book?
-    var storage:LocalStorageProtocol = LocalStorage.shared
+    var storage:LocalStorageProtocol = RealmStorage.shared
     
     func getBook() -> Book {
         guard let book = book else {
@@ -22,26 +22,26 @@ class BookDetailInteractor: BookDetailInteractorProtocol {
     }
     
     func isFavorite() -> Bool {
-        let favoriteList = storage.get()
+        let favoriteList = storage.all()
         let bookDetail = getBook()
         let isFavorite = favoriteList.contains(bookDetail.id)
         return isFavorite
     }
     
     func favoriteBook() {
-        guard let id = book?.id else {
+        guard let book = book else {
             return
         }
-        storage.save(string: id)
+        storage.add(book)
         presenter?.bookSaved()
     }
     
     func unfavoriteBook() {
-        guard let id = book?.id else {
+        guard let book = book else {
             return
         }
         
-        storage.delete(string: id)
+        storage.delete(book)
         presenter?.bookSaved()
     }
 }

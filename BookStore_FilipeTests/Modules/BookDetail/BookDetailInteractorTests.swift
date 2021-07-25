@@ -18,19 +18,19 @@ class BookDetailInteractorTests: XCTestCase {
     var mockStorage: LocalStorageProtocol?
     
     override func setUp() {
+        super.setUp()
         sut = BookDetailInteractor()
         mockPresenter = MockBookDetailPresenter()
         mockStorage = MockLocalStorage()
         sut?.presenter = mockPresenter
         sut?.storage = mockStorage!
-        super.setUp()
     }
     
     override func tearDown() {
+        super.tearDown()
         sut = nil
         mockPresenter = nil
         mockStorage = nil
-        super.tearDown()
     }
     
     func testGetBookSuccess() {
@@ -48,12 +48,13 @@ class BookDetailInteractorTests: XCTestCase {
     }
     
     func testIsFavoriteBookTrue() {
-        mockStorage?.save(string: "1")
-        
         let imageLinks = ImageLinks(smallThumbnail: "", thumbnail: "")
         let volumeInfo = VolumeInfo(title: "", authors: [""], volumeInfoDescription: nil, imageLinks: imageLinks)
         let saleInfo = SaleInfo(buyLink: nil)
-        sut?.book = Book(kind: "", id: "1", selfLink: "", volumeInfo: volumeInfo, saleInfo: saleInfo)
+        let book =  Book(kind: "", id: "1", selfLink: "", volumeInfo: volumeInfo, saleInfo: saleInfo)
+        sut?.book = book
+        
+        mockStorage?.add(book)
         
         expect(self.sut?.isFavorite()).to(beTrue())
     }
@@ -88,12 +89,13 @@ class BookDetailInteractorTests: XCTestCase {
     }
     
     func testUnfavoriteBook() {
-        mockStorage?.save(string: "1")
-        
         let imageLinks = ImageLinks(smallThumbnail: "", thumbnail: "")
         let volumeInfo = VolumeInfo(title: "", authors: [""], volumeInfoDescription: nil, imageLinks: imageLinks)
         let saleInfo = SaleInfo(buyLink: nil)
-        sut?.book = Book(kind: "", id: "1", selfLink: "", volumeInfo: volumeInfo, saleInfo: saleInfo)
+        let book = Book(kind: "", id: "1", selfLink: "", volumeInfo: volumeInfo, saleInfo: saleInfo)
+        sut?.book = book
+        
+        mockStorage?.add(book)
         
         sut?.unfavoriteBook()
         expect(self.mockPresenter?.isSuccess).to(beTrue())
@@ -115,16 +117,17 @@ class MockLocalStorage: LocalStorageProtocol {
     
     var array:[String] = [String]()
     
-    func save(string: String) {
-        array.append(string)
-    }
-    
-    func get() -> [String] {
+    func all() -> [String] {
         return array
     }
     
-    func delete(string: String) {
-        let index = array.firstIndex(of: string)
+    func add(_ book: Book) {
+        array.append(book.id)
+    }
+    
+    func delete(_ book: Book) {
+        let index = array.firstIndex(of: book.id)
         array.remove(at: index!)
     }
+    
 }
